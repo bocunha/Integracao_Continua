@@ -34,3 +34,10 @@ test('Testando se o modelo cliente tem a propriedade CPF', () => {
 
     expect(cliente.validateCPF()).toBe(true);
   });
+
+  test('Testando se no modelo cliente o CPF e valido sem ponto', () => {
+    let cliente = new Cliente();
+    cliente.cpf = "";
+
+    expect(cliente.validateCPF()).toBe(false);
+  });
